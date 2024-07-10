@@ -9,8 +9,15 @@ import { v2 as cloudinary } from "cloudinary";
 import fileUpload from "express-fileupload";
 import cors from "cors";
 import bodyParser from "body-parser";
+import Razorpay from "razorpay";
 
 dotenv.config();
+
+export const instance = new Razorpay({
+  key_id: process.env.Razorpay_Key,
+  key_secret: process.env.Razorpay_Secret,
+});
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
