@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { server } from "../main";
 import toast, { Toaster } from "react-hot-toast";
@@ -80,6 +80,27 @@ export const UserContextProvider = ({ children }) => {
     }
   }
 
+  async function fetchUser() {
+    try {
+      const { data } = await axios.get(`${server}/user/me`, {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      });
+
+      setIsAuth(true);
+      setUser(data.user);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   return (
     <userContext.Provider
       value={{
@@ -94,6 +115,7 @@ export const UserContextProvider = ({ children }) => {
         setLoading,
         registerUser,
         verifyOtp,
+        fetchUser,
       }}
     >
       {children}

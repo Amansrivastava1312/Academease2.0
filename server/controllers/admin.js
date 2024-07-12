@@ -122,19 +122,6 @@ export const deleteCourse = async (req, res) => {
 
   const lectures = await Lecture.find({ course: course._id });
 
-  await Promise.all(
-    lectures.map(async (lecture) => {
-      await unlinkAsync(lecture.video);
-      console.log("video deleted");
-    })
-  );
-
-  rm(course.image, () => {
-    console.log("image deleted");
-  });
-
-  await cloudinary.uploader.destroy(course.image);
-
   await Lecture.find({ course: req.params.id }).deleteMany();
 
   await course.deleteOne();

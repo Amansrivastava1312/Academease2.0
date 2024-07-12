@@ -33,7 +33,7 @@ export const fetchLectures = async (req, res, next) => {
       message: "You have not subscribed to this course",
     });
 
-  res.json({ lectures });
+  res.json(lectures);
 };
 
 export const fetchLecture = async (req, res) => {
