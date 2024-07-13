@@ -26,6 +26,7 @@
   border: 5px solid rgb(255, 255, 255);
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
   margin: 20px;
+  align-items: center;
 }
 
 .heading {
@@ -157,5 +158,16 @@
 .agreement a {
   text-decoration: none;
   color: #0099ff;
-  font-size: 13px;
+  font-size: 15px;
+}
+
+img {
+  height: 80px;
+  width: 90px;
+}
+
+.agreement .reg {
+  text-decoration: underline !important;
+  font-size: large;
+  color: #0a7ecc;
 }

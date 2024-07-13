@@ -41,7 +41,9 @@ const Login = () => {
 
     <div className="main">
       <div class="container">
-        <div class="heading">Sign In</div>
+        <div class="heading">
+          <img src="academease.png" class="image" />
+        </div>
         <form class="form" onSubmit={submitHandler}>
           <input
             placeholder="E-mail"
@@ -105,7 +107,12 @@ const Login = () => {
           </div>
         </div>
         <span class="agreement">
-          <a href="#">Learn user licence agreement</a>
+          <a href="#">
+            Don't have account ?{" "}
+            <a class="reg" href="/register">
+              Register
+            </a>
+          </a>
         </span>
       </div>
     </div>

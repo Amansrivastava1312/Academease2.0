@@ -21,7 +21,9 @@ const Register = () => {
   return (
     <div className="main">
       <div class="container">
-        <div class="heading">Register</div>
+        <div class="heading">
+          <img src="academease.png" class="image" />
+        </div>
         <form class="form" onSubmit={submitHandler}>
           <input
             placeholder="Name"
