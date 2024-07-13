@@ -10,46 +10,61 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  const Style = {
+    marginTop: "20px",
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
     await registerUser(name, email, password, navigate);
   };
   return (
-    <div className="auth-page">
-      <div className="auth-form">
-        <h2>Register</h2>
-        <form onSubmit={submitHandler}>
-          <label htmlFor="name">Name</label>
+    <div className="main">
+      <div class="container">
+        <div class="heading">Register</div>
+        <form class="form" onSubmit={submitHandler}>
           <input
+            placeholder="Name"
+            id="email"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            class="input"
             required
           />
 
-          <label htmlFor="email">Email</label>
           <input
+            placeholder="E-mail"
+            id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            class="input"
             required
           />
-
-          <label htmlFor="password">Password</label>
           <input
+            placeholder="Password"
+            id="password"
+            name="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            class="input"
             required
           />
 
-          <button type="submit" disabled={btnLoading} className="common-btn">
+          <button
+            style={Style}
+            disabled={btnLoading}
+            type="submit"
+            class="login-button"
+          >
             {btnLoading ? "Please Wait..." : "Register"}
           </button>
         </form>
-        <p>
-          have an account? <Link to="/login">Login</Link>
-        </p>
+        <span class="agreement">
+          <a href="#">OTP will be sent to your email for verification</a>
+        </span>
       </div>
     </div>
   );
