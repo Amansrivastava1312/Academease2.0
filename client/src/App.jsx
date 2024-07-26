@@ -12,6 +12,7 @@ import CourseDescription from "./pages/coursedescription/CourseDescription";
 import Course from "./pages/courses/Course";
 import CourseStudy from "./pages/coursestudy/CourseStudy";
 import Lecture from "./pages/lecture/Lecture";
+import "tailwindcss/tailwind.css";
 function App() {
   const [count, setCount] = useState(0);
   const { user, isAuth, loading } = UserData();
@@ -25,6 +26,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={isAuth ? <Home /> : <Login />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/verify" element={<Verify />} />

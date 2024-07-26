@@ -20,18 +20,18 @@ const Register = () => {
   };
   return (
     <div className="main">
-      <div class="container">
-        <div class="heading">
-          <img src="academease.png" class="image" />
+      <div className="container">
+        <div className="heading">
+          <img src="academease.png" className="image" />
         </div>
-        <form class="form" onSubmit={submitHandler}>
+        <form className="form" onSubmit={submitHandler}>
           <input
             placeholder="Name"
             id="email"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            class="input"
+            className="input"
             required
           />
 
@@ -41,7 +41,7 @@ const Register = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            class="input"
+            className="input"
             required
           />
           <input
@@ -51,7 +51,7 @@ const Register = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            class="input"
+            className="input"
             required
           />
 
@@ -59,12 +59,12 @@ const Register = () => {
             style={Style}
             disabled={btnLoading}
             type="submit"
-            class="login-button"
+            className="login-button"
           >
             {btnLoading ? "Please Wait..." : "Register"}
           </button>
         </form>
-        <span class="agreement">
+        <span className="agreement">
           <a href="#">OTP will be sent to your email for verification</a>
         </span>
       </div>
